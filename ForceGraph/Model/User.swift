@@ -17,10 +17,15 @@ public struct UserParticle: Particle {
     public var id: UUID = UUID()
     
     @Binding fileprivate var viewPosition: CGPoint
+    fileprivate var positionRef: Position?
     
     @inline(__always)
     public func tick() {
         viewPosition = position
+        if let reference = positionRef {
+            reference.x = position.x
+            reference.y = position.y
+        }
     }
     
     public init(position: Binding<CGPoint>) {
@@ -28,6 +33,14 @@ public struct UserParticle: Particle {
         self.velocity = .zero
         self.position = position.wrappedValue
         self.fixed = false
+    }
+    
+    public init(position: Position) {
+        self._viewPosition = .constant(position.cgPoint)
+        self.velocity = .zero
+        self.position = position.cgPoint
+        self.fixed = false
+        self.positionRef = position
     }
 }
 

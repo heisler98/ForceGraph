@@ -16,8 +16,9 @@ class Controller: ObservableObject {
     private let links: Links<UserParticle> = Links()
     
     @Published var nodes: [Node] = []
-    @Published var cgPoints: [Binding<CGPoint>] = []
     @Published var linkLayer: LinkLayer = LinkLayer(path: Path())
+    
+    @Published var positions: [Position] = []
     
     var particles: [UserParticle] = []
     
@@ -31,12 +32,16 @@ class Controller: ObservableObject {
     }()
     
     init() {
-        for i in 0..<10 {
+        for _ in 0..<10 {
             let node = Node()
-            cgPoints.append(node.$position)
-            let particle = UserParticle(position: cgPoints[i])
+            let position = Position()
+            
+            positions.append(position)
+            let particle = UserParticle(position: position)
+            
             simulation.insert(particle: particle)
             particles.append(particle)
+            
             nodes.append(node)
         }
         for i in 0...nodes.endIndex-2 {
