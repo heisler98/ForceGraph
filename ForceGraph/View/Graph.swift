@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 struct Graph: View {
-    @ObservedObject var controller = Controller()
+    @ObservedObject var controller = ForceController()
     @GestureState var isDragging: Bool = false
     @State var show: Bool = false
     var subscribers: [AnyCancellable?] = []
@@ -22,13 +22,15 @@ struct Graph: View {
 //                self.controller.nodes[i]
                 Image(systemName: "paperplane").resizable().frame(width: 44, height: 44)
                     .position(self.controller.positions[i].cgPoint)
-                    .gesture(self.dragParticle(self.controller.particles[i], index: i))
                     .gesture(TapGesture().onEnded {
                         self.show.toggle()
-                    })
+                    }.exclusively(before: self.dragParticle(self.controller.particles[i], index: i)))
             }
             if self.show {
-                
+                Rectangle().fill(Color.green)
+                    .onTapGesture {
+                        self.show.toggle()
+                }
             }
         }
             .onAppear {

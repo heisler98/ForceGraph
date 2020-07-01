@@ -24,7 +24,7 @@
 		5A76DC9024A9C30A0011609C /* LinkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC8F24A9C30A0011609C /* LinkLayer.swift */; };
 		5A76DC9224A9C3D40011609C /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9124A9C3D40011609C /* Graph.swift */; };
 		5A76DC9424A9C3DF0011609C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9324A9C3DF0011609C /* Node.swift */; };
-		5A76DC9724A9C48E0011609C /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9624A9C48E0011609C /* Controller.swift */; };
+		5A76DC9724A9C48E0011609C /* ForceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9624A9C48E0011609C /* ForceController.swift */; };
 		5A76DC9924A9D1760011609C /* CGPointWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9824A9D1760011609C /* CGPointWrapper.swift */; };
 		5A76DC9B24AA92110011609C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9A24AA92110011609C /* TestView.swift */; };
 		5A76DC9D24AA97BB0011609C /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9C24AA97BB0011609C /* Modifiers.swift */; };
@@ -50,7 +50,7 @@
 		5A76DC8F24A9C30A0011609C /* LinkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLayer.swift; sourceTree = "<group>"; };
 		5A76DC9124A9C3D40011609C /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		5A76DC9324A9C3DF0011609C /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		5A76DC9624A9C48E0011609C /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		5A76DC9624A9C48E0011609C /* ForceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceController.swift; sourceTree = "<group>"; };
 		5A76DC9824A9D1760011609C /* CGPointWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointWrapper.swift; sourceTree = "<group>"; };
 		5A76DC9A24AA92110011609C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		5A76DC9C24AA97BB0011609C /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		5A76DC9524A9C4680011609C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5A76DC9624A9C48E0011609C /* Controller.swift */,
+				5A76DC9624A9C48E0011609C /* ForceController.swift */,
 				5A76DC9824A9D1760011609C /* CGPointWrapper.swift */,
 				5A76DC9C24AA97BB0011609C /* Modifiers.swift */,
 			);
@@ -240,7 +240,7 @@
 				5A76DC8824A9BFE10011609C /* Simulation.swift in Sources */,
 				5A76DC8D24A9C00D0011609C /* User.swift in Sources */,
 				5A76DC8724A9BFE10011609C /* Links.swift in Sources */,
-				5A76DC9724A9C48E0011609C /* Controller.swift in Sources */,
+				5A76DC9724A9C48E0011609C /* ForceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
