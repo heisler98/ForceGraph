@@ -7,15 +7,18 @@
 //
 
 import SwiftUI
-
-struct LinkLayer: Shape {
-    var path: Path
+///The shape responsible for drawing links (edges) between particles (vertices).
+public struct LinkLayer: Shape {
+    ///The path of the links.
+    ///- Note: This is updated before the shape is redrawn.
+    public var path: Path
     
-    func path(in rect: CGRect) -> Path {
+    public func path(in rect: CGRect) -> Path {
         self.path
     }
-    
-    init(path: Path) {
+    ///Initializes and returns a `Shape` with the specified path.
+    /// - parameter path: The path of the shape. 
+    public init(path: Path) {
         self.path = path
     }
 }
