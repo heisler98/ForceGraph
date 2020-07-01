@@ -49,6 +49,14 @@ class Controller: ObservableObject {
                 self.links.link(between: particles[i], and: particles[v], distance: 200)
             }
         }
+//        var i = 0
+//        var j = 1
+//        for _ in nodes {
+//            guard i < particles.endIndex && j < particles.endIndex else { break }
+//            self.links.link(between: particles[i], and: particles[j], distance: 50)
+//            i = i+1
+//            j = j+1
+//        }
         
     }
 }

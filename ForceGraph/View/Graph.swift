@@ -12,43 +12,53 @@ import Combine
 struct Graph: View {
     @ObservedObject var controller = Controller()
     @GestureState var isDragging: Bool = false
+    @State var show: Bool = false
     var subscribers: [AnyCancellable?] = []
     var body: some View {
+        GeometryReader { geometry in
         ZStack {
-            controller.linkLayer.stroke(Color.gray, lineWidth: 2)
+            self.controller.linkLayer.stroke(Color.gray, lineWidth: 2)
             ForEach(0..<10) { i in
-                self.controller.nodes[i]
+//                self.controller.nodes[i]
+                Image(systemName: "paperplane").resizable().frame(width: 44, height: 44)
                     .position(self.controller.positions[i].cgPoint)
-                    .gesture(self.dragParticle(self.controller.particles[i]))
+                    .gesture(self.dragParticle(self.controller.particles[i], index: i))
+                    .gesture(TapGesture().onEnded {
+                        self.show.toggle()
+                    })
+            }
+            if self.show {
+                
             }
         }
             .onAppear {
-                self.controller.center.center = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
+                self.controller.center.center = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
                 self.controller.simulation.start()
                 
         }.onDisappear {
             self.controller.simulation.stop()
         }
+        }
     }
     
-    func dragParticle(_ particle: UserParticle) -> some Gesture {
+    func dragParticle(_ particle: UserParticle, index: Int) -> some Gesture {
         var aParticle = particle
-        return DragGesture(minimumDistance: 0.0).updating($isDragging) { (value, state, transaction) in
-            //gesture state change
-            state = true
+        return DragGesture(minimumDistance: 0.0).onChanged { value in
             
             //particle state changes
-            if state == true {
+            
                 aParticle.fixed = true
                 aParticle.position = value.location
                 self.controller.simulation.kick()
                 self.controller.simulation.particles.update(with: aParticle)
-            }
+                
+            
         }.onEnded { value in
             aParticle.fixed = false
             let xVelocity = abs(Double(value.predictedEndLocation.x - value.location.x) / Double(value.time.timeIntervalSinceNow))
             let yVelocity = abs(Double(value.predictedEndLocation.y - value.location.y) / Double(value.time.timeIntervalSinceNow))
-            //aParticle.velocity += CGPoint(x: xVelocity, y: yVelocity) * 0.05
+            aParticle.velocity += CGPoint(x: xVelocity, y: yVelocity) * 0.05
+            aParticle.position = value.location
             self.controller.simulation.particles.update(with: aParticle)
         }
     }

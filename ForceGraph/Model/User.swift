@@ -9,34 +9,28 @@
 import Foundation
 import SwiftUI
 
+///Represents a 2D view.
 public struct UserParticle: Particle {
-    
+    ///The velocity of the particle.
     public var velocity: CGPoint
+    ///The position of the particle in the container's coordinate space.
     public var position: CGPoint
     public var fixed: Bool
+    ///The particle's unique identifier.
     public var id: UUID = UUID()
+    ///The reference to the view's position.
+    fileprivate var positionRef: Position
     
-    @Binding fileprivate var viewPosition: CGPoint
-    fileprivate var positionRef: Position?
-    
+    ///Updates the referenced position to the newest particle position values.
+    ///- note: This method is called inline for optimization.
     @inline(__always)
     public func tick() {
-        viewPosition = position
-        if let reference = positionRef {
-            reference.x = position.x
-            reference.y = position.y
-        }
+        positionRef.x = position.x
+        positionRef.y = position.y
     }
-    
-    public init(position: Binding<CGPoint>) {
-        self._viewPosition = position
-        self.velocity = .zero
-        self.position = position.wrappedValue
-        self.fixed = false
-    }
-    
+    ///Initializes and returns an instance of `UserParticle`.
+    ///- returns: A new `UserParticle` value.
     public init(position: Position) {
-        self._viewPosition = .constant(position.cgPoint)
         self.velocity = .zero
         self.position = position.cgPoint
         self.fixed = false
