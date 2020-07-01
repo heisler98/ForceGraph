@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5A49B67624AC5CBB00A28C64 /* ParticleContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49B67524AC5CBB00A28C64 /* ParticleContext.swift */; };
+		5A7661E524AD20050035F084 /* UserParticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7661E424AD20050035F084 /* UserParticleTests.swift */; };
+		5A7661ED24AD22250035F084 /* ForceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7661EC24AD22250035F084 /* ForceControllerTests.swift */; };
 		5A76DC6924A9BFB90011609C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC6824A9BFB90011609C /* AppDelegate.swift */; };
 		5A76DC6B24A9BFB90011609C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC6A24A9BFB90011609C /* SceneDelegate.swift */; };
 		5A76DC6D24A9BFB90011609C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC6C24A9BFB90011609C /* ContentView.swift */; };
@@ -28,8 +30,22 @@
 		5A76DC9924A9D1760011609C /* CGPointWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9824A9D1760011609C /* CGPointWrapper.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A7661E724AD20050035F084 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A76DC5D24A9BFB90011609C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A76DC6424A9BFB90011609C;
+			remoteInfo = ForceGraph;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5A49B67524AC5CBB00A28C64 /* ParticleContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleContext.swift; sourceTree = "<group>"; };
+		5A7661E224AD20050035F084 /* ForceGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForceGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7661E424AD20050035F084 /* UserParticleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParticleTests.swift; sourceTree = "<group>"; };
+		5A7661E624AD20050035F084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A7661EC24AD22250035F084 /* ForceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceControllerTests.swift; sourceTree = "<group>"; };
 		5A76DC6524A9BFB90011609C /* ForceGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForceGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A76DC6824A9BFB90011609C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A76DC6A24A9BFB90011609C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +69,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A7661DF24AD20050035F084 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A76DC6224A9BFB90011609C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,10 +87,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A7661E324AD20050035F084 /* ForceGraphTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A7661E424AD20050035F084 /* UserParticleTests.swift */,
+				5A7661EC24AD22250035F084 /* ForceControllerTests.swift */,
+				5A7661E624AD20050035F084 /* Info.plist */,
+			);
+			path = ForceGraphTests;
+			sourceTree = "<group>";
+		};
 		5A76DC5C24A9BFB90011609C = {
 			isa = PBXGroup;
 			children = (
 				5A76DC6724A9BFB90011609C /* ForceGraph */,
+				5A7661E324AD20050035F084 /* ForceGraphTests */,
 				5A76DC6624A9BFB90011609C /* Products */,
 				5A76DC8924A9BFF40011609C /* Frameworks */,
 			);
@@ -77,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				5A76DC6524A9BFB90011609C /* ForceGraph.app */,
+				5A7661E224AD20050035F084 /* ForceGraphTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +185,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A7661E124AD20050035F084 /* ForceGraphTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A7661EB24AD20050035F084 /* Build configuration list for PBXNativeTarget "ForceGraphTests" */;
+			buildPhases = (
+				5A7661DE24AD20050035F084 /* Sources */,
+				5A7661DF24AD20050035F084 /* Frameworks */,
+				5A7661E024AD20050035F084 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A7661E824AD20050035F084 /* PBXTargetDependency */,
+			);
+			name = ForceGraphTests;
+			productName = ForceGraphTests;
+			productReference = 5A7661E224AD20050035F084 /* ForceGraphTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5A76DC6424A9BFB90011609C /* ForceGraph */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A76DC7924A9BFBC0011609C /* Build configuration list for PBXNativeTarget "ForceGraph" */;
@@ -177,6 +230,10 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Hunter Eisler";
 				TargetAttributes = {
+					5A7661E124AD20050035F084 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 5A76DC6424A9BFB90011609C;
+					};
 					5A76DC6424A9BFB90011609C = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -196,11 +253,19 @@
 			projectRoot = "";
 			targets = (
 				5A76DC6424A9BFB90011609C /* ForceGraph */,
+				5A7661E124AD20050035F084 /* ForceGraphTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A7661E024AD20050035F084 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A76DC6324A9BFB90011609C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +279,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A7661DE24AD20050035F084 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7661E524AD20050035F084 /* UserParticleTests.swift in Sources */,
+				5A7661ED24AD22250035F084 /* ForceControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A76DC6124A9BFB90011609C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,6 +312,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5A7661E824AD20050035F084 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A76DC6424A9BFB90011609C /* ForceGraph */;
+			targetProxy = 5A7661E724AD20050035F084 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		5A76DC7324A9BFBC0011609C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -250,6 +332,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5A7661E924AD20050035F084 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TN69P7NFS6;
+				INFOPLIST_FILE = ForceGraphTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eisler.ForceGraphTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForceGraph.app/ForceGraph";
+			};
+			name = Debug;
+		};
+		5A7661EA24AD20050035F084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TN69P7NFS6;
+				INFOPLIST_FILE = ForceGraphTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eisler.ForceGraphTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForceGraph.app/ForceGraph";
+			};
+			name = Release;
+		};
 		5A76DC7724A9BFBC0011609C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,6 +531,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A7661EB24AD20050035F084 /* Build configuration list for PBXNativeTarget "ForceGraphTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A7661E924AD20050035F084 /* Debug */,
+				5A7661EA24AD20050035F084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5A76DC6024A9BFB90011609C /* Build configuration list for PBXProject "ForceGraph" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
