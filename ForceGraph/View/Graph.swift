@@ -14,19 +14,32 @@ struct Graph: View {
     
     ///The ForceController responsible for managing the simulation.
     @ObservedObject var controller = ForceController<UserParticle> { (links) in
+        
+        // Create a context set
         var contexts: [ParticleContext<UserParticle>] = []
+        
         for _ in 0..<10 {
+            
+            // Positions are managed, updated, and published via reference
+            // Particles are copied values
             let position = Position()
             let particle = UserParticle(position: position)
             
+            // Create the context
             contexts.append(.init(particle: particle, at: position))
         }
-        // creates a webbed graph
+        
+        // Create a webbed graph with the passed arg
         for i in 0...contexts.endIndex-2 {
             for v in i+1...contexts.endIndex-1 {
+                
+                // Links stores relationships between particles
+                // Updates will redraw the controller's linkLayer path
                 links.link(between: contexts[i].particle, and: contexts[v].particle, distance: 200)
             }
         }
+        
+        // Pass the context set back to the controller
         return contexts
     }
     
@@ -61,16 +74,21 @@ struct Graph: View {
                         // Gestures determine node interactivity
                         // ExclusiveGesture allows both Tap and Drag gestures
                         .gesture(TapGesture().onEnded {
-                            self.show.toggle()
+                            withAnimation {
+                                self.show.toggle()
+                            }
                         }.exclusively(before: self.dragParticle(context.particle)))
                 }
                 
                 // Rectangle state determined via Tap
                 if self.show {
-                    Rectangle().fill(Color.green)
+                    self.tapAlert
+                        .position(x: geometry.size.width/2, y: 10)
+                        .padding(geometry.safeAreaInsets)
                         .onTapGesture {
                             self.show.toggle()
                     }
+                        .animation(.default)
                 }
             }
             .onAppear {
@@ -103,6 +121,16 @@ struct Graph: View {
             self.controller.endedDraggingParticle(particle, value: value)
             
         }
+    }
+    
+    var tapAlert: some View {
+        Rectangle()
+            .fill(Color.green)
+            .frame(width: 120, height: 80)
+        .overlay(
+            Text("Tapped a node")
+        )
+            
     }
 }
 

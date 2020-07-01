@@ -23,12 +23,10 @@ public class ForceController<T : Particle>: ObservableObject {
     //MARK: - Published properties
     ///A 2D shape which draws the links between particles. Updates with each tick.
     @Published var linkLayer: LinkLayer = LinkLayer(path: Path())
-    //
+    ///The published contexts of the particles.
     @Published var contexts: [ParticleContext<T>] = []
     
     //MARK: - Public properties
-    ///A public collection of `UserParticle`s used by the controller.
-    public var particles: [T] = []
     ///The center of the view, in the parent's coordinate space.
     public let center: Center<T> = Center(.zero)
     ///The current simulation managed by the controller.
@@ -41,7 +39,7 @@ public class ForceController<T : Particle>: ObservableObject {
         return simulation
     }()
     
-    //MARK: - Initializers
+    //MARK: - Initializer
     ///An anonymous function for use in configuration of `ForceController`.
     public typealias ForceConfigurator = (Links<T>) -> [ParticleContext<T>]
     ///Initializes and returns a `Controller` object through calling the passed configuration.
