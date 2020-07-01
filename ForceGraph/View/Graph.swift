@@ -45,7 +45,9 @@ struct Graph: View {
                 // This shape's path is constantly redrawn by the controller
                 self.controller.linkLayer.stroke(Color.gray, lineWidth: 2)
                 
-                // For sample's sake, create 10 nodes
+                // Controller publishes an array of contexts
+                // Each node is represented by its context, which contains
+                // its particle and associated position
                 ForEach(self.controller.contexts) { context in
                     
                     Circle()
@@ -53,7 +55,7 @@ struct Graph: View {
                         .frame(width: 44, height: 44)
                         
                         // The position of each node is published by the controller
-                        // Each position is accessible via index path
+                        // Position is a member of the context
                         .position(context.position.cgPoint)
                         
                         // Gestures determine node interactivity
