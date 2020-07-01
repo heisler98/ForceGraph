@@ -39,12 +39,12 @@ public struct UserParticle: Particle {
 }
 
 extension UserParticle: Hashable {
-    
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-        
     }
 }
+
+extension UserParticle: Identifiable {}
 
 public func ==(lhs: UserParticle, rhs: UserParticle) -> Bool {
     return lhs.id == rhs.id

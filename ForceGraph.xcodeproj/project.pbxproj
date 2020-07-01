@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A49B67624AC5CBB00A28C64 /* ParticleContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49B67524AC5CBB00A28C64 /* ParticleContext.swift */; };
 		5A76DC6924A9BFB90011609C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC6824A9BFB90011609C /* AppDelegate.swift */; };
 		5A76DC6B24A9BFB90011609C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC6A24A9BFB90011609C /* SceneDelegate.swift */; };
 		5A76DC6D24A9BFB90011609C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC6C24A9BFB90011609C /* ContentView.swift */; };
@@ -23,14 +24,12 @@
 		5A76DC8D24A9C00D0011609C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC8C24A9C00D0011609C /* User.swift */; };
 		5A76DC9024A9C30A0011609C /* LinkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC8F24A9C30A0011609C /* LinkLayer.swift */; };
 		5A76DC9224A9C3D40011609C /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9124A9C3D40011609C /* Graph.swift */; };
-		5A76DC9424A9C3DF0011609C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9324A9C3DF0011609C /* Node.swift */; };
 		5A76DC9724A9C48E0011609C /* ForceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9624A9C48E0011609C /* ForceController.swift */; };
 		5A76DC9924A9D1760011609C /* CGPointWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9824A9D1760011609C /* CGPointWrapper.swift */; };
-		5A76DC9B24AA92110011609C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9A24AA92110011609C /* TestView.swift */; };
-		5A76DC9D24AA97BB0011609C /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9C24AA97BB0011609C /* Modifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A49B67524AC5CBB00A28C64 /* ParticleContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleContext.swift; sourceTree = "<group>"; };
 		5A76DC6524A9BFB90011609C /* ForceGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForceGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A76DC6824A9BFB90011609C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A76DC6A24A9BFB90011609C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,11 +48,8 @@
 		5A76DC8C24A9C00D0011609C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A76DC8F24A9C30A0011609C /* LinkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLayer.swift; sourceTree = "<group>"; };
 		5A76DC9124A9C3D40011609C /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
-		5A76DC9324A9C3DF0011609C /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		5A76DC9624A9C48E0011609C /* ForceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceController.swift; sourceTree = "<group>"; };
 		5A76DC9824A9D1760011609C /* CGPointWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointWrapper.swift; sourceTree = "<group>"; };
-		5A76DC9A24AA92110011609C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		5A76DC9C24AA97BB0011609C /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,9 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5A76DC8F24A9C30A0011609C /* LinkLayer.swift */,
-				5A76DC9324A9C3DF0011609C /* Node.swift */,
 				5A76DC9124A9C3D40011609C /* Graph.swift */,
-				5A76DC9A24AA92110011609C /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,7 +142,7 @@
 			children = (
 				5A76DC9624A9C48E0011609C /* ForceController.swift */,
 				5A76DC9824A9D1760011609C /* CGPointWrapper.swift */,
-				5A76DC9C24AA97BB0011609C /* Modifiers.swift */,
+				5A49B67524AC5CBB00A28C64 /* ParticleContext.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -228,16 +222,14 @@
 				5A76DC8524A9BFE10011609C /* QuadTree.swift in Sources */,
 				5A76DC9924A9D1760011609C /* CGPointWrapper.swift in Sources */,
 				5A76DC6924A9BFB90011609C /* AppDelegate.swift in Sources */,
-				5A76DC9B24AA92110011609C /* TestView.swift in Sources */,
 				5A76DC8624A9BFE10011609C /* Center.swift in Sources */,
 				5A76DC9024A9C30A0011609C /* LinkLayer.swift in Sources */,
-				5A76DC9424A9C3DF0011609C /* Node.swift in Sources */,
 				5A76DC6B24A9BFB90011609C /* SceneDelegate.swift in Sources */,
 				5A76DC8324A9BFE10011609C /* Utilities.swift in Sources */,
 				5A76DC6D24A9BFB90011609C /* ContentView.swift in Sources */,
-				5A76DC9D24AA97BB0011609C /* Modifiers.swift in Sources */,
 				5A76DC8424A9BFE10011609C /* ManyParticle.swift in Sources */,
 				5A76DC8824A9BFE10011609C /* Simulation.swift in Sources */,
+				5A49B67624AC5CBB00A28C64 /* ParticleContext.swift in Sources */,
 				5A76DC8D24A9C00D0011609C /* User.swift in Sources */,
 				5A76DC8724A9BFE10011609C /* Links.swift in Sources */,
 				5A76DC9724A9C48E0011609C /* ForceController.swift in Sources */,
