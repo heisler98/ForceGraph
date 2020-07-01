@@ -9,9 +9,10 @@
 import SwiftUI
 import Combine
 
+// MARK: - SampleGraph
 ///A sample Force simulation.
 struct SampleGraph: View {
-    
+    // MARK: - Observed properties
     ///The ForceController responsible for managing the simulation.
     @ObservedObject var controller = ForceController<UserParticle> { (links) in
         
@@ -42,10 +43,13 @@ struct SampleGraph: View {
         // Pass the context set back to the controller
         return contexts
     }
-    
+    //MARK: - State properties
     ///Manages the state of a rectangle appearing via TapGesture.
     @State var show: Bool = false
+    ///Manages the textual display of node position. (Superfluous)
+    @State var currentPosition: CGPoint = .zero
     
+    // MARK: - Body
     var body: some View {
         
         // GeometryReader provides the benefit of a relative coordinate space,
@@ -90,6 +94,13 @@ struct SampleGraph: View {
                     }
                         .animation(.default)
                 }
+                
+                // For demonstration purposes: shows the position of each node as it's dragged
+                VStack(alignment: .center) {
+                    Spacer()
+                    Text("(\(self.currentPosition.x), \(self.currentPosition.y))")
+                        .padding(geometry.safeAreaInsets)
+                }
             }
             .onAppear {
                 
@@ -103,6 +114,7 @@ struct SampleGraph: View {
             }
         }
     }
+    // MARK: - Drag functions
     ///Creates the `DragGesture` responsible for node interaction.
     /// - parameter particle: The particle being dragged.
     /// - returns: An opaque `Gesture`.
@@ -115,14 +127,16 @@ struct SampleGraph: View {
             // for reference on necessary particle updates.
             self.controller.draggingParticle(particle, value: value)
             
+            self.currentPosition = value.location //superfluous; for demo
         }.onEnded { value in
             
             // Performs the default end-of-drag behavior.
             self.controller.endedDraggingParticle(particle, value: value)
-            
+           
+            self.currentPosition = value.location //superfluous; for demo
         }
     }
-    
+    // MARK: - Ancillary views
     var tapAlert: some View {
         Rectangle()
             .fill(Color.green)
@@ -133,7 +147,7 @@ struct SampleGraph: View {
             
     }
 }
-
+// MARK: - Xcode preview provider
 #if DEBUG
 struct Graph_Previews: PreviewProvider {
     static var previews: some View {

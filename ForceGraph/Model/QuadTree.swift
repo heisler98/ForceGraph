@@ -4,12 +4,12 @@ public enum QuadTree<T> {
     case Leaf(CGPoint, T)
     indirect case Internal(CGRect, QuadTree?, QuadTree?, QuadTree?, QuadTree?, T)
     
-    init?<U: Particle, V: Collection>(particles: V, initial: (U) -> T, accumulator: ([QuadTree<T>?]) -> T) where V.Iterator.Element == U, V.IndexDistance == Int {
+    init?<U: Particle, V: Collection>(particles: V, initial: (U) -> T, accumulator: ([QuadTree<T>?]) -> T) where V.Iterator.Element == U {
         guard let rect = particles.map({ $0.position }).boundingRect else { return nil }
         self.init(particles: particles, rect: rect, initial: initial, accumulator: accumulator)
     }
     
-    init?<U: Particle, V: Collection>(particles: V, rect: CGRect, initial: (U) -> T, accumulator: ([QuadTree<T>?]) -> T) where V.Iterator.Element == U, V.IndexDistance == Int {
+    init?<U: Particle, V: Collection>(particles: V, rect: CGRect, initial: (U) -> T, accumulator: ([QuadTree<T>?]) -> T) where V.Iterator.Element == U {
         let count = particles.count
         guard count > 0 else { return nil }
         if let particle = particles.first, count == 1 {

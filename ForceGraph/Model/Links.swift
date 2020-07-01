@@ -19,7 +19,10 @@ fileprivate struct Link<T: Particle>: Hashable {
         return a.hashValue ^ b.hashValue
     }
     
-    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(a)
+        hasher.combine(b)
+    }
     
     init(between a: T, and b: T, strength: CGFloat? = nil, distance: CGFloat? = nil) {
         self.a = a
