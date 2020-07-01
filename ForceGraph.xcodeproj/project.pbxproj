@@ -23,7 +23,7 @@
 		5A76DC8B24A9BFF40011609C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A76DC8A24A9BFF40011609C /* CoreGraphics.framework */; };
 		5A76DC8D24A9C00D0011609C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC8C24A9C00D0011609C /* User.swift */; };
 		5A76DC9024A9C30A0011609C /* LinkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC8F24A9C30A0011609C /* LinkLayer.swift */; };
-		5A76DC9224A9C3D40011609C /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9124A9C3D40011609C /* Graph.swift */; };
+		5A76DC9224A9C3D40011609C /* SampleGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9124A9C3D40011609C /* SampleGraph.swift */; };
 		5A76DC9724A9C48E0011609C /* ForceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9624A9C48E0011609C /* ForceController.swift */; };
 		5A76DC9924A9D1760011609C /* CGPointWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76DC9824A9D1760011609C /* CGPointWrapper.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,7 @@
 		5A76DC8A24A9BFF40011609C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5A76DC8C24A9C00D0011609C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A76DC8F24A9C30A0011609C /* LinkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLayer.swift; sourceTree = "<group>"; };
-		5A76DC9124A9C3D40011609C /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		5A76DC9124A9C3D40011609C /* SampleGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleGraph.swift; sourceTree = "<group>"; };
 		5A76DC9624A9C48E0011609C /* ForceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceController.swift; sourceTree = "<group>"; };
 		5A76DC9824A9D1760011609C /* CGPointWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5A76DC8F24A9C30A0011609C /* LinkLayer.swift */,
-				5A76DC9124A9C3D40011609C /* Graph.swift */,
+				5A76DC9124A9C3D40011609C /* SampleGraph.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,7 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A76DC9224A9C3D40011609C /* Graph.swift in Sources */,
+				5A76DC9224A9C3D40011609C /* SampleGraph.swift in Sources */,
 				5A76DC8524A9BFE10011609C /* QuadTree.swift in Sources */,
 				5A76DC9924A9D1760011609C /* CGPointWrapper.swift in Sources */,
 				5A76DC6924A9BFB90011609C /* AppDelegate.swift in Sources */,

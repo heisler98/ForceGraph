@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 ///A sample Force simulation.
-struct Graph: View {
+struct SampleGraph: View {
     
     ///The ForceController responsible for managing the simulation.
     @ObservedObject var controller = ForceController<UserParticle> { (links) in
@@ -137,7 +137,7 @@ struct Graph: View {
 #if DEBUG
 struct Graph_Previews: PreviewProvider {
     static var previews: some View {
-        Graph()
+        SampleGraph()
     }
 }
 #endif
