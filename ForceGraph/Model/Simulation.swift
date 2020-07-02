@@ -7,6 +7,8 @@ public protocol Particle: Hashable {
     var fixed: Bool { get set }
     
     func tick()
+    
+    init(position: Position)
 }
 
 public protocol Force {

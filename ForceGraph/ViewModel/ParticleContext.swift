@@ -34,6 +34,14 @@ public struct ParticleContext<T> where T : Particle {
         self.particle = particle
         self.position = Position()
     }
+    ///Initializes and returns a `ParticleContext` with a default particle and position.
+    /// - returns: A `ParticleContext` of type `T` where `T` conforms to `Particle`.
+    public static func createDefaultContext<T: Particle>() -> ParticleContext<T> {
+        
+        let position = Position(0, 0)
+        let particle = T(position: position)
+        return ParticleContext<T>(particle: particle, at: position)
+    }
 }
 
 extension ParticleContext: Identifiable {}

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+//MARK: - LinkLayer
 ///The shape responsible for drawing links (edges) between particles (vertices).
 public struct LinkLayer: Shape {
     ///The path of the links.

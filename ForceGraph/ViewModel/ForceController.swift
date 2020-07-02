@@ -48,6 +48,16 @@ public class ForceController<T : Particle>: ObservableObject {
         self.contexts.forEach { self.simulation.insert(particle: $0.particle) }
     }
     
+    // MARK: - Public simulation updaters
+    ///Adds a configuration to the simulation.
+    /// - parameter configuration: The configuration closure to apply to the simulation.
+    /// - note: This function does not overwrite previous context configurations, but the configuration closure can be used to unlink particles.
+    public func update(configuration: ForceConfigurator) {
+        let newContexts = configuration(links)
+        self.contexts.append(contentsOf: newContexts)
+        newContexts.forEach { self.simulation.insert(particle: $0.particle) }
+    }
+    
     //MARK: - Public view configurators
     ///Performs the default Force behavior for `View`.onAppear()
     /// - parameter proxy: The `GeometryProxy` in a `GeometryReader` view-building closure.

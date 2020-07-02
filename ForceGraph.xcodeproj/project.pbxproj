@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A212FF824AD33C400E55344 /* SampleMutableGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A212FF724AD33C400E55344 /* SampleMutableGraph.swift */; };
 		5A49B67624AC5CBB00A28C64 /* ParticleContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49B67524AC5CBB00A28C64 /* ParticleContext.swift */; };
 		5A7661E524AD20050035F084 /* UserParticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7661E424AD20050035F084 /* UserParticleTests.swift */; };
 		5A7661ED24AD22250035F084 /* ForceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7661EC24AD22250035F084 /* ForceControllerTests.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A212FF724AD33C400E55344 /* SampleMutableGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMutableGraph.swift; sourceTree = "<group>"; };
 		5A49B67524AC5CBB00A28C64 /* ParticleContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleContext.swift; sourceTree = "<group>"; };
 		5A7661E224AD20050035F084 /* ForceGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForceGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7661E424AD20050035F084 /* UserParticleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParticleTests.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				5A76DC8F24A9C30A0011609C /* LinkLayer.swift */,
 				5A76DC9124A9C3D40011609C /* SampleGraph.swift */,
+				5A212FF724AD33C400E55344 /* SampleMutableGraph.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A76DC9224A9C3D40011609C /* SampleGraph.swift in Sources */,
+				5A212FF824AD33C400E55344 /* SampleMutableGraph.swift in Sources */,
 				5A76DC8524A9BFE10011609C /* QuadTree.swift in Sources */,
 				5A76DC9924A9D1760011609C /* CGPointWrapper.swift in Sources */,
 				5A76DC6924A9BFB90011609C /* AppDelegate.swift in Sources */,

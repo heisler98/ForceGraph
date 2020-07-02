@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreGraphics
-
+// MARK: - Position
 ///A class wrapper for `CGPoint` structures.
 public class Position {
     ///The x-coordinate value.
@@ -33,7 +33,7 @@ public class Position {
         CGPoint(x: self.x, y: self.y)
     }
 }
-
+// MARK: - Extensions
 public extension CGPoint {
     ///The point value wrapped in a `Position` object.
     ///- returns: A `Position` object with the same scalar value.
