@@ -45,6 +45,7 @@
 /* Begin PBXFileReference section */
 		5A212FF724AD33C400E55344 /* SampleMutableGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMutableGraph.swift; sourceTree = "<group>"; };
 		5A212FF924ADAD0100E55344 /* ParticleContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleContextTests.swift; sourceTree = "<group>"; };
+		5A212FFB24ADB38A00E55344 /* Force */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Force; sourceTree = "<group>"; };
 		5A49B67524AC5CBB00A28C64 /* ParticleContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleContext.swift; sourceTree = "<group>"; };
 		5A7661E224AD20050035F084 /* ForceGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForceGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7661E424AD20050035F084 /* UserParticleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParticleTests.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		5A76DC5C24A9BFB90011609C = {
 			isa = PBXGroup;
 			children = (
+				5A212FFB24ADB38A00E55344 /* Force */,
 				5A76DC6724A9BFB90011609C /* ForceGraph */,
 				5A7661E324AD20050035F084 /* ForceGraphTests */,
 				5A76DC6624A9BFB90011609C /* Products */,
