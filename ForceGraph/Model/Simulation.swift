@@ -5,7 +5,7 @@ public protocol Particle: Hashable {
     var position: CGPoint { get set }
     var velocity: CGPoint { get set }
     var fixed: Bool { get set }
-    
+    var positionRef: Position { get }
     func tick()
     
     init(position: Position)
