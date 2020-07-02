@@ -90,7 +90,7 @@ struct SampleMutableGraph: View {
     }
     
     // MARK: - Helper functions
-    ///Returns a configuration which adds a node.
+    ///A ForceConfigurator helper which adds a node.
     /// - parameter links: The links passed by the configuration.
     /// - returns: A `ParticleContext` set.
     func addNode(link: Links<UserParticle>) -> [ParticleContext<UserParticle>] {
