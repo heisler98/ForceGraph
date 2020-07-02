@@ -28,6 +28,20 @@ class ParticleContextTests: XCTestCase {
     }
 
     // MARK: - Initializer tests
+    func testDefaultCreation() throws {
+        /// Arrange
+        // SUT is created via default creation
+        let particlePosition = sut.particle.positionRef
+        let contextPosition = sut.position
+        
+        /// Act | Assert
+        let areIdentical = (particlePosition === contextPosition)
+        XCTAssertTrue(areIdentical, "The particle position and the context position are not identical.")
+    }
     
-    
+    func testDefaultPositionCreation() throws {
+        /// Arrange
+        // SUT is not created via this initializer
+        let sut = ParticleContext<MockParticle>.init(particle: <#T##MockParticle#>)
+    }
 }

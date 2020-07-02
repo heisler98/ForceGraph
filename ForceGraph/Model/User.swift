@@ -19,7 +19,8 @@ public struct UserParticle: Particle {
     ///The particle's unique identifier.
     public var id: UUID = UUID()
     ///The reference to the view's position.
-    fileprivate var positionRef: Position
+    public private(set) var positionRef: Position
+    
     
     ///Updates the referenced position to the newest particle position values.
     ///- note: This method is called inline for optimization.

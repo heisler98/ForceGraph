@@ -32,7 +32,7 @@ public struct ParticleContext<T> where T : Particle {
     /// - parameter particle: The particle to contextualize.
     public init(particle: T) {
         self.particle = particle
-        self.position = Position()
+        self.position = particle.positionRef
     }
     ///Initializes and returns a `ParticleContext` with a default particle and position.
     /// - returns: A `ParticleContext` of type `T` where `T` conforms to `Particle`.
