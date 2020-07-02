@@ -8,13 +8,16 @@
 
 import XCTest
 import CoreGraphics
+
+// MARK: - UserParticle tests
 @testable import ForceGraph
-
 class UserParticleTests: XCTestCase {
-
+    
+    // MARK: - Properties
     var sut: UserParticle!
     var position: Position!
     
+    // MARK: - Setup | teardown
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         position = Position(0, 0)
@@ -27,6 +30,7 @@ class UserParticleTests: XCTestCase {
         position = nil
     }
 
+    // MARK: - Position tests
     func testPositionUpdate() throws {
         // Arrange
         // set up a new position for the particle
@@ -42,6 +46,18 @@ class UserParticleTests: XCTestCase {
         
     }
 
+    // MARK: - Protocol conformance tests
+    func testEquatability() throws {
+        // Arrange
+        let newPosition = Position(0, 0)
+        let anotherParticle = UserParticle(position: newPosition)
+        
+        // Act
+        let areDifferent = (sut != anotherParticle)
+        
+        // Assert
+        XCTAssertTrue(areDifferent, "The SUT and a new particle are considered the same.")
+    }
     
 
 }
