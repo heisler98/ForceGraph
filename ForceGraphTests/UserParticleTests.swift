@@ -47,7 +47,7 @@ class UserParticleTests: XCTestCase {
     }
 
     // MARK: - Protocol conformance tests
-    func testEquatability() throws {
+    func testEquality() throws {
         // Arrange
         let newPosition = Position(0, 0)
         let anotherParticle = UserParticle(position: newPosition)

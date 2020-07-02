@@ -42,6 +42,40 @@ class ParticleContextTests: XCTestCase {
     func testDefaultPositionCreation() throws {
         /// Arrange
         // SUT is not created via this initializer
-        let sut = ParticleContext<MockParticle>.init(particle: <#T##MockParticle#>)
+        sut = ParticleContext<MockParticle>.init(particle: .init(position: Position(0,0)))
+        
+        /// Act | Assert
+        let areIdentical = (sut.position === sut.particle.positionRef)
+        XCTAssertTrue(areIdentical, "The particle position and the context position are not identical.")
+    }
+    
+    func testFullInit() throws {
+        /// Arrange
+        // SUT is not created via this initializer
+        let position = Position(0,0)
+        sut = ParticleContext<MockParticle>.init(particle: .init(position: position), at: position)
+        
+        /// Act
+        let areIdentical = (sut.particle.positionRef === sut.position)
+        let identicalToBeginning = (sut.position === position)
+        
+        /// Assert
+        XCTAssertTrue({
+           areIdentical == identicalToBeginning && areIdentical == true
+        }(), "The particle position and the context position are not identical to the given position.")
+        
+    }
+    
+    // MARK: - Protocol conformance tests
+    
+    func testEquality() throws {
+        /// Arrange
+        let anotherSUT: ParticleContext<MockParticle> = .createDefaultContext()
+        
+        /// Act
+        let areDifferent = (anotherSUT != sut)
+        
+        /// Assert
+        XCTAssertTrue(areDifferent, "The contexts are separate instantiations yet returning equal.")
     }
 }
