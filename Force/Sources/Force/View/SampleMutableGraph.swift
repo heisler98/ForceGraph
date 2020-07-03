@@ -9,7 +9,7 @@
 import SwiftUI
 //MARK: - SampleMutableGraph
 /// A sample mutable Force simulation.
-struct SampleMutableGraph: View {
+public struct SampleMutableGraph: View {
     //MARK: - Observed properties
     @ObservedObject var controller = ForceController<UserParticle> { (links) in
         
@@ -34,7 +34,7 @@ struct SampleMutableGraph: View {
         return contexts
     }
     // MARK: - Body
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             ZStack {
                 
@@ -93,7 +93,7 @@ struct SampleMutableGraph: View {
     ///A ForceConfigurator helper which adds a node.
     /// - parameter links: The links passed by the configuration.
     /// - returns: A `ParticleContext` set.
-    func addNode(link: Links<UserParticle>) -> [ParticleContext<UserParticle>] {
+    private func addNode(link: Links<UserParticle>) -> [ParticleContext<UserParticle>] {
         
         // Create a context set
         var contexts = [ParticleContext<UserParticle>]()
@@ -113,7 +113,7 @@ struct SampleMutableGraph: View {
         link.link(between: newContext.particle, and: contextToAttach.particle, distance: 100)
         
         // .kick() ensures display link remains active
-        self.controller.simulation.kick()
+        self.controller.simulation.kick(to: 0.3)
         
         // Return the context set
         return contexts
@@ -123,7 +123,7 @@ struct SampleMutableGraph: View {
     ///Creates the `DragGesture` responsible for node interaction.
     /// - parameter particle: The particle being dragged.
     /// - returns: An opaque `Gesture`.
-    func dragParticle(_ particle: UserParticle) -> some Gesture {
+    private func dragParticle(_ particle: UserParticle) -> some Gesture {
         DragGesture(minimumDistance: 0.0)
             .onChanged { value in
                 
@@ -135,6 +135,8 @@ struct SampleMutableGraph: View {
             self.controller.endedDraggingParticle(particle, value: value)
             }
     }
+    ///Initializes and returns a `SampleMutableGraph` view.
+    public init() { }
 }
 
 struct SampleMutableGraph_Previews: PreviewProvider {

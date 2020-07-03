@@ -74,6 +74,12 @@ public class Simulation<T: Particle> {
         alpha = 1
     }
     
+    ///Kicks the simulation to the argument's value.
+    /// - parameter to: An alpha value.
+    public func kick(to: CGFloat) {
+        alpha = to
+    }
+    
     @objc private func tick() {
         alpha += (alphaTarget - alpha) * alphaDecay;
         guard alpha > alphaMin else { return }

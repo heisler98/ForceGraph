@@ -11,7 +11,7 @@ import Combine
 
 // MARK: - SampleGraph
 ///A sample Force simulation.
-struct SampleGraph: View {
+public struct SampleGraph: View {
     // MARK: - Observed properties
     ///The ForceController responsible for managing the simulation.
     @ObservedObject var controller = ForceController<UserParticle> { (links) in
@@ -50,7 +50,7 @@ struct SampleGraph: View {
     @State var currentPosition: CGPoint = .zero
     
     // MARK: - Body
-    var body: some View {
+    public var body: some View {
         
         // GeometryReader provides the benefit of a relative coordinate space,
         // delivered via a GeometryProxy value passed as an argument
@@ -118,7 +118,7 @@ struct SampleGraph: View {
     ///Creates the `DragGesture` responsible for node interaction.
     /// - parameter particle: The particle being dragged.
     /// - returns: An opaque `Gesture`.
-    func dragParticle(_ particle: UserParticle) -> some Gesture {
+    private func dragParticle(_ particle: UserParticle) -> some Gesture {
         
         return DragGesture(minimumDistance: 0.0).onChanged { value in
             
@@ -146,6 +146,8 @@ struct SampleGraph: View {
         )
             
     }
+    ///Initializes and returns a `SampleGraph` view.
+    public init() { }
 }
 // MARK: - Xcode preview provider
 #if DEBUG
