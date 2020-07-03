@@ -74,6 +74,10 @@ public class Simulation<T: Particle> {
         alpha = 1
     }
     
+    public func kick(to: CGFloat) {
+        alpha = to
+    }
+    
     @objc private func tick() {
         alpha += (alphaTarget - alpha) * alphaDecay;
         guard alpha > alphaMin else { return }

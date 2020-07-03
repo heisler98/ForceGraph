@@ -113,7 +113,7 @@ struct SampleMutableGraph: View {
         link.link(between: newContext.particle, and: contextToAttach.particle, distance: 100)
         
         // .kick() ensures display link remains active
-        self.controller.simulation.kick()
+        self.controller.simulation.kick(to: 0.3)
         
         // Return the context set
         return contexts
